@@ -29,3 +29,4 @@ data/*.json
 # Environment and sensitive config files
 .env
 config.yml
+Data/
