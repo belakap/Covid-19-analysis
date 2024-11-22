@@ -1,0 +1,31 @@
+# Virtual environment
+env/
+venv/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Compiled code
+__pycache__/
+*.pyc
+
+# Data files
+data/*.csv
+data/raw/
+data/*.json
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# IDEs and editor specific files
+.vscode/
+.idea/
+
+# Environment and sensitive config files
+.env
+config.yml
