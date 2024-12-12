@@ -1,12 +1,15 @@
-                                                        #**Covid-19 Data ANALYSIS**
-    
-#Abstract
+
+                                                        
+                                                        
+**COVID-19 Data Analysis**
+
+**Abstract**
 
 COVID 19 Data Analysis is a capstone project for the Code:You Data Analysis course. This study explores COVID-19 data to assess vaccine effectiveness in preventing COVID-19 infections and deaths. 
 
 The goal of this study is to analyze the impact of vaccination status and community transmission levels on COVID-19 infections and deaths, using quantitative data from reliable datasets, and present findings to inform public health strategies.
 
-#Objectives
+**Objectives**
 
 -Analyze the Impact of Vaccination Status on Infection and Mortality Rates
 
@@ -16,7 +19,7 @@ The goal of this study is to analyze the impact of vaccination status and commun
 
 -Develop Data-Driven Public Health Recommendations
 
-#Steps:
+**Steps**:
 
 1. Define the study question: impact of vaccination status and community transmission levels on COVID-19 infections and deaths;
 
@@ -32,16 +35,16 @@ The goal of this study is to analyze the impact of vaccination status and commun
 
 7. Perform in-depth analysis and visualization.
 
-#**Code:You Data Analysis project criteria**
+**Code:You Data Analysis project criteria**
 
 The following criteria have been met:
 
-*Export two datasets from the Centers for Disease Control and Prevention website*: 
+1. Export two datasets from the Centers for Disease Control and Prevention website: 
 
        https://data.cdc.gov/Public-Health-Surveillance/Rates-of-COVID-19-Cases-or-Deaths-by-Age-Group-and/3rge-nu2a/data_preview
        https://data.cdc.gov/Public-Health-Surveillance/United-States-COVID-19-County-Level-of-Community-T/nra9-vzzn/data_preview
 
-*Identify the required packages* through a Google search, then use pip to install them. The installation of some packages like matplotlib, and seaborn did not work with pip install. They were installed using C:/Users/weare/AppData/Local/Programs/Python/Python312/python.exe -m pip install 
+2. Identify the required packages through a Google search, then use pip to install them. The installation of some packages like matplotlib, and seaborn did not work with pip install. They were installed using C:/Users/weare/AppData/Local/Programs/Python/Python312/python.exe -m pip install 
 
 *Loading data*
 
@@ -53,10 +56,13 @@ Save the two datasets as csv files in the Data/raw folder. Rename and read them 
 
 *Clean and merge data*
 
-As you can read in the script 03_Data_Cleaning.ipynb, data were cleaned using pandas: 
-                         •	Select important columns for analysis and delete unnecessary columns;
-                         •	Handling duplicates and missing values;
-                         •	Addressing outliers and inconsistencies. 
+As you can read in the script 02_Data_Cleaning.ipynb, data were cleaned using pandas: 
+                         
+ •	Select important columns for analysis and delete unnecessary columns;
+                         
+ •	Handling duplicates and missing values;
+                         
+ •	Addressing outliers and inconsistencies. 
 
 From the clean datasets, two tables c were created and saved into a database (SQL_data.db), using pandas and SQL.
 
@@ -64,13 +70,13 @@ To analyse the relationship between transmission level and vaccination status, t
 
 *Data presentation and visualization*
 
-The chi-square test was used to quantifies the relationship between vaccination/outcomes and community transmission levels. The result showed there was a statistical significant between the two values. Meaning that vaccinated individuals tend to have higher outcomes in areas with high transmission compared to unvaccinated individual.
-
 Histograms, heatmap, and scatter plot were used to examine the distribution and variable's relationship.
 
 Example: The following scatter plot shows the number of outcomes for vaccinated and unvaccinated individuals at different levels of transmission.
 
 ![Vaccinated vs Unvaccinated Outcomes by Community Transmission Level](Vaccinated_vs_Unvaccinated_Outcomes_by_Community_Transmission_Level.png)
+
+The chi-square test was used to quantifies the relationship between vaccination/outcomes and community transmission levels. The result showed there was a statistical significant between the two values. Meaning that vaccinated individuals tend to have higher outcomes in areas with high transmission compared to unvaccinated individual.
 
 *Creat pandas pivot tables for aggregation.*
 
@@ -101,28 +107,21 @@ outbreaks. From this analysis, vaccination plays a crucial role in reducing infe
 
 Enhance public health measures such as vaccination drives, and public awareness campaigns.
 
-#**Project layout**
+**Project layout**
 
-|------------------------------------|---------------------------------------------------------------------------------------|
-|:---:File                           |:---:Description                                                                       | 	
-|------------------------------------|---------------------------------------------------------------------------------------|
-|:---README.md                       |:---General information about the project                                              |
-|------------------------------------|---------------------------------------------------------------------------------------|
-|:---Data/raw                        |:---raw data files                                                                     |
-|------------------------------------|---------------------------------------------------------------------------------------|
-|:---Data/clean                      |:---cleaned data files                                                                 |
-|------------------------------------|---------------------------------------------------------------------------------------|
-|:---Dictionary                      |:---Dictionary for the raw data                                                        |
-|------------------------------------|---------------------------------------------------------------------------------------|
-|:---01_Preliminary_Analysis.ipynb   |:---jupyter notebook showing simple data analysis to understand the raw datasets       | 
-|                                    |:---and guide the cleaning process.                                                    |
-|------------------------------------|---------------------------------------------------------------------------------------|
-|:---02_Data_Cleaning.ipynb          |:---jupyter notebook showing the cleaning performed                                    |
-|------------------------------------|---------------------------------------------------------------------------------------|
-|:---03_Exploratory_Analysis.ipynb   |:---jupyter notebook showing essential analysis aimed to answer the project's questions|
-|------------------------------------|---------------------------------------------------------------------------------------|
 
-#**Requirements to run the project**
+|File                                |Description                                                                            | 	
+|------------------------------------|---------------------------------------------------------------------------------------|
+|README.md                           |General information about the project                                                  |
+|Data/raw                            |raw data files                                                                         |
+|Data/clean                          |cleaned data files                                                                     |
+|Dictionary                      |Dictionary for the raw data                                                                |
+|01_Preliminary_Analysis.ipynb        |jupyter notebook showing simple data analysis to understand the raw datasets               | 
+|                                    |and guide the cleaning process.                                                        |
+|02_Data_Cleaning.ipynb          |jupyter notebook showing the cleaning performed                                    |
+|03_Exploratory_Analysis.ipynb   |jupyter notebook showing essential analysis aimed to answer the project's questions|
+
+**Requirements to run the project**
 
 *Github*: if not yet installed, you can download at https://git-scm.com/downloads
 
