@@ -2,7 +2,9 @@
 
 This dictionary is made considering df.dtypes output.
 
+
 ***Rates_of Cases_or_Deaths.csv***
+
 
 
 |Field                    |Data type |Description                  |
@@ -27,7 +29,9 @@ This dictionary is made considering df.dtypes output.
 |                               |               |or underestimations when comparing groups (vaccinated vs. unvaccinated).             |
 
 
+
 ***County_Level_of_community_Transmission.csv***
+
 
 
 |Field               |Data type           |Description                                                                        |
@@ -43,7 +47,9 @@ This dictionary is made considering df.dtypes output.
 
 
 
+
 ***merged_df (merged SQL_data.db two tables (Covid_rates and trans_level)*** 
+
 
 
 |Field                   |Data type |Description                                                   |
