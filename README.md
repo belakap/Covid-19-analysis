@@ -7,13 +7,13 @@
 
 COVID 19 Data Analysis is a capstone project for the Code:You Data Analysis course. This study explores COVID-19 data to assess vaccine effectiveness in preventing COVID-19 infections and deaths. 
 
-The goal of this study is to analyze the impact of vaccination status and community transmission levels on COVID-19 infections and deaths, using quantitative data from reliable datasets, and present findings to inform public health strategies.
+The goal of this study is to analyze the impact of vaccination and community transmission on COVID-19 infections and deaths, using quantitative data from reliable datasets, and present findings to inform public health strategies.
 
 **Objectives**
 
 -Analyze the Impact of Vaccination Status on Infection and Mortality Rates
 
--Assess the Influence of Community Transmission Levels
+-Assess the Influence of Community Transmission
 
 -Identify Geographic disparities
 
@@ -21,7 +21,7 @@ The goal of this study is to analyze the impact of vaccination status and commun
 
 **Steps**:
 
-1. Define the study question: impact of vaccination status and community transmission levels on COVID-19 infections and deaths;
+1. Define the study question: impact of vaccination and community transmission on COVID-19 infections and deaths;
 
 2. Determine the primary goal and objectives;
 
@@ -39,14 +39,14 @@ The goal of this study is to analyze the impact of vaccination status and commun
 
 The following criteria have been met:
 
-1. Export two datasets from the Centers for Disease Control and Prevention website: 
+1. Export two datasets from the Centers for Disease Control and Prevention (CDC) website: 
 
        https://data.cdc.gov/Public-Health-Surveillance/Rates-of-COVID-19-Cases-or-Deaths-by-Age-Group-and/3rge-nu2a/data_preview
        https://data.cdc.gov/Public-Health-Surveillance/United-States-COVID-19-County-Level-of-Community-T/nra9-vzzn/data_preview
 
-2. Identify the required packages through a Google search, then use pip to install them. The installation of some packages like matplotlib, and seaborn did not work with pip install. They were installed using C:/Users/weare/AppData/Local/Programs/Python/Python312/python.exe -m pip install 
+2. Identify the required packages through a Google search, then use pip to install them. The installation of some packages like matplotlib, and seaborn did not work with pip install. They were installed using C:/Users/weare/AppData/Local/Programs/Python/Python312/python.exe -m pip install <name-of-package>.
 
-*Loading data*
+3. Loading data
 
 Save the two datasets as csv files in the Data/raw folder. Rename and read them in Python using pandas:
 
@@ -54,7 +54,7 @@ Save the two datasets as csv files in the Data/raw folder. Rename and read them 
 
 - County_Level_of_Community_Transmission.csv
 
-*Clean and merge data*
+4. Clean and merge data
 
 As you can read in the script 02_Data_Cleaning.ipynb, data were cleaned using pandas: 
                          
@@ -64,11 +64,11 @@ As you can read in the script 02_Data_Cleaning.ipynb, data were cleaned using pa
                          
  •	Addressing outliers and inconsistencies. 
 
-From the clean datasets, two tables c were created and saved into a database (SQL_data.db), using pandas and SQL.
+From the clean datasets, two tables were created and saved into a database (SQL_data.db), using pandas and SQL.
 
 To analyse the relationship between transmission level and vaccination status, the two tables (Covid_rates and trans_level) were merged in SQL using a common identifier (date_formatted).
 
-*Data presentation and visualization*
+5. Present and visualize data
 
 Histograms, heatmap, and scatter plot were used to examine the distribution and variable's relationship.
 
@@ -76,19 +76,19 @@ Example: The following scatter plot shows the number of outcomes for vaccinated 
 
 ![Vaccinated vs Unvaccinated Outcomes by Community Transmission Level](Vaccinated_vs_Unvaccinated_Outcomes_by_Community_Transmission_Level.png)
 
-The chi-square test was used to quantifies the relationship between vaccination/outcomes and community transmission levels. The result showed there was a statistical significant between the two values. Meaning that vaccinated individuals tend to have higher outcomes in areas with high transmission compared to unvaccinated individual.
+The chi-square test was used to quantify the relationship between vaccination and outcomes/community transmission levels. The result showed there was a statistical significant. Meaning that vaccinated individuals tend to have higher outcomes in areas with high transmission compared to unvaccinated individual.
 
-*Creat pandas pivot tables for aggregation.*
+6. Create pandas pivot tables for aggregation.
 
-Example create a pivot table from the df_seasons DataFrame and prepare the data for heatmap:
+Example: create a pivot table from the df_seasons DataFrame and prepare the data for heatmap:
 
 heatmap_data = df_seasons.pivot_table(index='state_name', columns='season', values='numeric_level', aggfunc='mean')
 
-*Use of virtual environment.*
+7. Use the virtual environment.
  
-*Build a data dictionary.* 
+8. Build a data dictionary. 
 
-*Interpretation of data and documentation*
+9. Interpret and document.
 
 **Summery of findings**
 
@@ -101,11 +101,18 @@ outbreaks. From this analysis, vaccination plays a crucial role in reducing infe
 
 - Transmission levels appear to be relatively stable across seasons for most states, with no significant seasonal spikes or drops. This suggests that transmission levels might not be heavily influenced by seasonal factors in this dataset;
 
-- States in the Northeast (Massachusetts, Rhode Island) and South (Florida, Georgia, South Carolina) show higher transmission levels. Mountain West and Pacific States (Montana, Wyoming, Hawaii) tend to have lower average transmission levels;
+- There is a disparity in transmission level among different states. States like District of Columbia, and Delaware exhibit consistently higher transmission levels across all seasons. Hawaii and Nebraska show consistently lower transmission levels (blue shades).
+
+- Assessing the relationship between transmission levels and vaccination, the study finds that vaccinated individuals tend to have higher outcomes in areas with high transmission compared to unvaccinated individuals (Refer to the scater plot above). This challenges the common belief that vaccination reduces virus transmission. It is important to note that this finding does not imply that vaccines are ineffectives.
 
 **Recommendation**
 
-Enhance public health measures such as vaccination drives, and public awareness campaigns.
+- Enhance vaccination campaigns such as vaccination drives, and public awareness campaigns in younger, socially active populations;
+- Focus on high risk groups (65 years old and plus) for mortality reduction;
+- Allocate additional resources and implement stricter public health measures in states with consistently higher transmission levels;
+- Develop state-specific strategies for improving vaccination coverage;
+- Conduct further research to explore why vaccinated individuals tend to show higher outcomes in areas with high transmission;
+- Address misconceptions about vaccine ineffectiveness by demonstrating their role in preventing severe outcomes and reducing deaths rather than completely  stopping transmission.
 
 **Project layout**
 
@@ -123,7 +130,7 @@ Enhance public health measures such as vaccination drives, and public awareness 
 
 **Requirements to run the project**
 
-*Github*: if not yet installed, you can download at https://git-scm.com/downloads
+*Git*: if not yet installed, you can download at https://git-scm.com/downloads
 
 *Python*: this project uses python 3.12. If not yet, you can install or update python at https://www.python.org/downloads/
 
